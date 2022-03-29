@@ -6,6 +6,8 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class PostCollection extends ResourceCollection
 {
+
+    public $collects = PostResource::class;
     /**
      * Transform the resource collection into an array.
      *
@@ -14,6 +16,16 @@ class PostCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'data' => $this->collection,
+            'meta' => [
+                'organization' => 'Tesjo',
+                'authors' => [
+                    'Jesus',
+                    'Tesjo'
+                ],
+                'type' => 'articles',
+            ],
+        ];
     }
 }
