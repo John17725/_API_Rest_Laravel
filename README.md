@@ -89,3 +89,13 @@ Migrated:  2022_03_28_012905_create_posts_table (27.97ms)
 Database seeding completed successfully.
                                          
 ```
+### Versionado --> Ver1.0
+
+- Configuracion para retornar un recurso como un registro ejemplo un Post
+- Recurso (Post)
+- Coleccion de datos (Muchos datos)
+
+`Una coleccion de datos son muchos recursos` y `un recurso es una peticion post`
+
+Comenzando con este punto tenemos que crear un controller asociado a la version 1 y que este este dentro de un directorio el cual estara dentro de `App\Http\Controllers\Api\V1` y en esa ruta de directorio crearemos un controllador que se llamara `PostController` el cual si bien sera similar a un controlador como recurso el cual cuenta con operaciones para un `CRUD` pero en este caso `las funciones de CREAR y EDITAR (que son formularios) se encargara de proveerlos el software que se conecte a la api` por lo que lo unico que necesitamos en el api es las funciones de salvar, listar, etc, `(Codigo de accion)`
+
