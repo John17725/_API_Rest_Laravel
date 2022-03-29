@@ -99,3 +99,22 @@ Database seeding completed successfully.
 
 Comenzando con este punto tenemos que crear un controller asociado a la version 1 y que este este dentro de un directorio el cual estara dentro de `App\Http\Controllers\Api\V1` y en esa ruta de directorio crearemos un controllador que se llamara `PostController` el cual si bien sera similar a un controlador como recurso el cual cuenta con operaciones para un `CRUD` pero en este caso `las funciones de CREAR y EDITAR (que son formularios) se encargara de proveerlos el software que se conecte a la api` por lo que lo unico que necesitamos en el api es las funciones de salvar, listar, etc, `(Codigo de accion)`
 
+### Metodo Destroy en como controller
+Dentro del metodo destroy usando la variable que recibimos como parametro en la url `$post` con la siguiente linea en uso del ORM borramos el post `$post->delete();` y seguido enviamos un response con json
+
+```php
+  return response()->json([
+    'message:' => "Success"
+  ], 204);
+```
+`El codigo 204 corresponde a sin contenido`
+
+
+### Versionado --> Ver2.0
+
+Se hace un analisis referente a peticiones del usuario que quiera mejoras en el API por lo que hay que empezar a definir
+- Que tenemos?
+- Que se necesita?
+- Configuracion
+- Recurso
+- Coleccion
